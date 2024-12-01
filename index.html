@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule Pemesanan Jasa Cuci AC</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <img src="logo.png" alt="Nala Aircon Logo" class="logo">
+        <h1>Nala Aircon - Schedule Pemesanan</h1>
+    </header>
+
+    <!-- Form Container -->
+    <div class="container">
+        <form id="scheduleForm">
+            <label for="name">Nama:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="phone">Nomor Telepon:</label>
+            <input type="tel" id="phone" name="phone" required pattern="[0-9]{10,13}" placeholder="081234567890">
+
+            <label for="address">Alamat Lengkap:</label>
+            <textarea id="address" name="address" rows="3" required></textarea>
+
+            <label for="acType">Tipe AC:</label>
+            <select id="acType" name="acType" required>
+                <option value="" disabled selected>Pilih tipe AC</option>
+                <option value="split">Split</option>
+                <option value="window">Window</option>
+                <option value="cassette">Cassette</option>
+                <option value="portable">Portable</option>
+            </select>
+
+            <label for="serviceType">Jenis Layanan:</label>
+            <select id="serviceType" name="serviceType" required>
+                <option value="" disabled selected>Pilih jenis layanan</option>
+                <option value="cuci_ac">Cuci AC</option>
+                <option value="servis_ac">Servis AC</option>
+                <option value="bongkar_pasang_ac">Bongkar Pasang AC</option>
+                <option value="isi_freon">Isi Freon</option>
+            </select>
+
+            <label for="unitCount">Jumlah Unit:</label>
+            <input type="number" id="unitCount" name="unitCount" min="1" required>
+
+            <label for="scheduleDate">Tanggal Pemesanan:</label>
+            <input type="date" id="scheduleDate" name="scheduleDate" required>
+
+            <label for="scheduleTime">Waktu Pemesanan:</label>
+            <input type="time" id="scheduleTime" name="scheduleTime" required>
+
+            <label for="notes">Catatan Tambahan:</label>
+            <textarea id="notes" name="notes" rows="3" placeholder="Opsional"></textarea>
+
+            
+<div class="form-group">
+    <button id="getLocationButton" class="btn-location" type="button">Ambil Lokasi Saya</button>
+    <p id="locationOutput" class="location-output"></p>
+</div>
+
+<button type="submit">Kirim Pemesanan</button>
+        </form>
+        <p id="confirmationMessage"></p>
+    </div>
+
+    <!-- Modal Pop-Up -->
+    <div id="confirmationModal" class="modal">
+        <div class="modal-content">
+            <span id="closeModal" class="close">&times;</span>
+            <p id="confirmationMessage"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+<div class="location-container">
+    <button id="getLocationButton" class="btn-location">Ambil Lokasi Saya</button>
+    <p id="locationOutput" class="location-output"></p>
+</div>
+
+</body>
+</html>
